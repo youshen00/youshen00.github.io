@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <title>Ajax // youshen</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.71.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="youshen" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://youshen00.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ajax"/>
+<meta name="twitter:description" content="AJAX技术  AJAX介绍 AJAX即Asynchronous Javascript And XML(异步JavaScript 和 XML)。 他不是一种新的编程语言，而是通过异步实现的网页的局部更新技术。   核心对象 XMLHttpRequest对象是一个javascript对象，存在浏览器差异。简称xhr对象  AJAX编程思路 //创建xhr对象  var xhr; //屏蔽浏览器差异  if(window.XMLHttpRequest){ xhr = new XMLHttpRequest(); }else{ xhr = new ActiveXObject(&#34;Microsoft.XMLHTTP&#34;); } //发送请求参数  xhr.open(&#34;GET|POST&#34;,&#34;url?参数&#34;); xhr.send(null); //处理响应并渲染页面  xhr.onreadystatechange = function(){ if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){ console.log(xhr.responseText); } }  发送GET请求 xhr.open(&#34;GET&#34;,&#34;url?参数=值&#34;); xhr.send(); 发送post请求 xhr.open(&#34;POST&#34;,&#34;url&#34;); // 设置发送请求的编码方式 默认方式  xhr.setRequestHeader(&#34;content-type&#34;,&#34;application/x-www-form-urlencoded&#34;); xhr.send(&#34;参数 = 值&#34;)  AJAX的数据交换机制 JSON(javascript Object Notation js对象标记) 是一种轻量级的数据交换格式  1."/>
+
+    <meta property="og:title" content="Ajax" />
+<meta property="og:description" content="AJAX技术  AJAX介绍 AJAX即Asynchronous Javascript And XML(异步JavaScript 和 XML)。 他不是一种新的编程语言，而是通过异步实现的网页的局部更新技术。   核心对象 XMLHttpRequest对象是一个javascript对象，存在浏览器差异。简称xhr对象  AJAX编程思路 //创建xhr对象  var xhr; //屏蔽浏览器差异  if(window.XMLHttpRequest){ xhr = new XMLHttpRequest(); }else{ xhr = new ActiveXObject(&#34;Microsoft.XMLHTTP&#34;); } //发送请求参数  xhr.open(&#34;GET|POST&#34;,&#34;url?参数&#34;); xhr.send(null); //处理响应并渲染页面  xhr.onreadystatechange = function(){ if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){ console.log(xhr.responseText); } }  发送GET请求 xhr.open(&#34;GET&#34;,&#34;url?参数=值&#34;); xhr.send(); 发送post请求 xhr.open(&#34;POST&#34;,&#34;url&#34;); // 设置发送请求的编码方式 默认方式  xhr.setRequestHeader(&#34;content-type&#34;,&#34;application/x-www-form-urlencoded&#34;); xhr.send(&#34;参数 = 值&#34;)  AJAX的数据交换机制 JSON(javascript Object Notation js对象标记) 是一种轻量级的数据交换格式  1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://youshen00.github.io/post/ajax/" />
+<meta property="article:published_time" content="2020-05-21T11:00:06+08:00" />
+<meta property="article:modified_time" content="2020-05-21T11:00:06+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://youshen00.github.io/"><img class="app-header-avatar" src="/kabuto.jpg" alt="youshen" /></a>
+      <h1>youshen</h1>
+      <p>争取日更的个人博客！！ </p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/youshen00" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Ajax</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 21, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="ajax技术">AJAX技术</h1>
+<hr>
+<h2 id="ajax介绍">AJAX介绍</h2>
+<pre><code>AJAX即Asynchronous Javascript And XML(异步JavaScript 和 XML)。
+他不是一种新的编程语言，而是通过异步实现的网页的局部更新技术。
+</code></pre>
+<hr>
+<h2 id="核心对象">核心对象</h2>
+<pre><code>XMLHttpRequest对象是一个javascript对象，存在浏览器差异。简称xhr对象
+</code></pre>
+<h2 id="ajax编程思路">AJAX编程思路</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+    <span style="color:#75715e">//创建xhr对象
+</span><span style="color:#75715e"></span>    var xhr<span style="color:#f92672">;</span>
+        <span style="color:#75715e">//屏蔽浏览器差异
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>window<span style="color:#f92672">.</span><span style="color:#a6e22e">XMLHttpRequest</span><span style="color:#f92672">){</span>
+            xhr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> XMLHttpRequest<span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+            xhr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ActiveXObject<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Microsoft.XMLHTTP&#34;</span><span style="color:#f92672">);</span> 
+        <span style="color:#f92672">}</span>
+    <span style="color:#75715e">//发送请求参数
+</span><span style="color:#75715e"></span>    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GET|POST&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;url?参数&#34;</span><span style="color:#f92672">);</span>
+    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+    <span style="color:#75715e">//处理响应并渲染页面
+</span><span style="color:#75715e"></span>    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> function<span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> 4 <span style="color:#f92672">&amp;&amp;</span> xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> 200<span style="color:#f92672">){</span>
+            console<span style="color:#f92672">.</span><span style="color:#a6e22e">log</span><span style="color:#f92672">(</span>xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">responseText</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<h3 id="发送get请求">发送GET请求</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GET&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;url?参数=值&#34;</span><span style="color:#f92672">);</span>
+    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">();</span>
+</code></pre></div><h3 id="发送post请求">发送post请求</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;POST&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;url&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#75715e">// 设置发送请求的编码方式 默认方式
+</span><span style="color:#75715e"></span>    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestHeader</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;content-type&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;application/x-www-form-urlencoded&#34;</span><span style="color:#f92672">);</span> 
+    xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;参数 = 值&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><hr>
+<h2 id="ajax的数据交换机制">AJAX的数据交换机制</h2>
+<pre><code>JSON(javascript Object Notation js对象标记) 是一种轻量级的数据交换格式
+</code></pre>
+<h3 id="1">1.</h3>
+<pre><code>如果服务端响应的不再是字符串而是对象或者集合类型时，无法直接将对象响应给客户端
+</code></pre>
+<p>需要将对象类型转换成字符串类型</p>
+<h3 id="2在后端代码使用json">2.在后端代码使用json</h3>
+<pre><code>导入alibaba  fastjson依赖 调用方法将对象转换成字符串
+
+```
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.47&lt;/version&gt;
+&lt;/dependency&gt;
+
+```
+
+在Action方法中转换对象为字符串
+
+```java
+User user = new User();
+String userJson = JSONObject.toJSONString(user);//fastjson
+//设置response编码 防止中文乱码
+response.setContentType(&quot;application/json;charset=UTF-8&quot;);
+PrintWriter writer = response.getWriter();
+writer.out(userJson);
+```
+</code></pre>
+<h3 id="3在前端页面使用json">3.在前端页面使用json</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> function<span style="color:#f92672">(){</span>
+    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> 4 <span style="color:#f92672">&amp;&amp;</span> xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span><span style="color:#f92672">==</span>200<span style="color:#f92672">){</span>
+        var json <span style="color:#f92672">=</span> xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">responseText</span><span style="color:#f92672">;</span>
+        var userObj <span style="color:#f92672">=</span> eval<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;(&#34;</span><span style="color:#f92672">+</span>xhr<span style="color:#f92672">.</span><span style="color:#a6e22e">responseText</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;)&#34;</span><span style="color:#f92672">);</span>
+        console<span style="color:#f92672">.</span><span style="color:#a6e22e">log</span><span style="color:#f92672">(</span>userObj<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">);</span>
+        console<span style="color:#f92672">.</span><span style="color:#a6e22e">log</span><span style="color:#f92672">(</span>userObj<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="4日期问题">4.日期问题</h3>
+<pre><code>```java
+var userJson = JSONObject.toJsonStringWithDateFormat(user,&quot;yyyy-MM-dd&quot;);
+```
+</code></pre>
+<hr>
+<h2 id="jquery-对ajax的封装">JQuery 对Ajax的封装</h2>
+<h3 id="1jquery提供了全局函数">1.JQuery提供了全局函数</h3>
+<pre><code>```java
+$.ajax({
+    type:&quot;POST|GET&quot;,
+    url:&quot;&quot;,
+    data:&quot;name=张三|{key:value}&quot;,
+    dataType:&quot;JSON&quot;,
+    success:function(result){
+        console.log(result);
+    }
+})
+```
+</code></pre>
+<h3 id="2发送get方式的异步请求">2.发送GET方式的异步请求</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> $<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>url<span style="color:#f92672">,</span>data<span style="color:#f92672">,</span>function<span style="color:#f92672">(</span>result<span style="color:#f92672">){},</span><span style="color:#e6db74">&#34;JSON&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div><p>###3.发送POST方式的异步请求</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$<span style="color:#f92672">.</span><span style="color:#a6e22e">post</span><span style="color:#f92672">(</span>url<span style="color:#f92672">,</span>data<span style="color:#f92672">,</span>function<span style="color:#f92672">(</span>result<span style="color:#f92672">){},</span><span style="color:#e6db74">&#34;JSON&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

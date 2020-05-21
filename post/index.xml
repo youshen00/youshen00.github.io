@@ -5,16 +5,41 @@
     <link>https://youshen00.github.io/post/</link>
     <description>Recent content in Posts on youshen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 19 May 2020 20:12:09 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 May 2020 13:02:18 +0800</lastBuildDate>
     
 	<atom:link href="https://youshen00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>目录</title>
+      <link>https://youshen00.github.io/post/menu/</link>
+      <pubDate>Thu, 21 May 2020 13:02:18 +0800</pubDate>
+      
+      <guid>https://youshen00.github.io/post/menu/</guid>
+      <description>具体内容目录（不完全版本）
+ #java基础相关
+#web相关
+#框架相关
+AJAX 今日更新
+#数据库/缓存相关
+#游戏相关
+#文学相关</description>
+    </item>
+    
+    <item>
+      <title>Ajax</title>
+      <link>https://youshen00.github.io/post/ajax/</link>
+      <pubDate>Thu, 21 May 2020 11:00:06 +0800</pubDate>
+      
+      <guid>https://youshen00.github.io/post/ajax/</guid>
+      <description>AJAX技术  AJAX介绍 AJAX即Asynchronous Javascript And XML(异步JavaScript 和 XML)。 他不是一种新的编程语言，而是通过异步实现的网页的局部更新技术。   核心对象 XMLHttpRequest对象是一个javascript对象，存在浏览器差异。简称xhr对象  AJAX编程思路 //创建xhr对象  var xhr; //屏蔽浏览器差异  if(window.XMLHttpRequest){ xhr = new XMLHttpRequest(); }else{ xhr = new ActiveXObject(&amp;#34;Microsoft.XMLHTTP&amp;#34;); } //发送请求参数  xhr.open(&amp;#34;GET|POST&amp;#34;,&amp;#34;url?参数&amp;#34;); xhr.send(null); //处理响应并渲染页面  xhr.onreadystatechange = function(){ if(xhr.readyState == 4 &amp;amp;&amp;amp; xhr.status == 200){ console.log(xhr.responseText); } }  发送GET请求 xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;url?参数=值&amp;#34;); xhr.send(); 发送post请求 xhr.open(&amp;#34;POST&amp;#34;,&amp;#34;url&amp;#34;); // 设置发送请求的编码方式 默认方式  xhr.setRequestHeader(&amp;#34;content-type&amp;#34;,&amp;#34;application/x-www-form-urlencoded&amp;#34;); xhr.send(&amp;#34;参数 = 值&amp;#34;)  AJAX的数据交换机制 JSON(javascript Object Notation js对象标记) 是一种轻量级的数据交换格式  1.</description>
+    </item>
+    
+    <item>
       <title>博客项目初始化以及内容介绍</title>
       <link>https://youshen00.github.io/post/blog/</link>
-      <pubDate>Tue, 19 May 2020 20:12:09 +0800</pubDate>
+      <pubDate>Thu, 21 May 2020 11:00:06 +0800</pubDate>
       
       <guid>https://youshen00.github.io/post/blog/</guid>
       <description>本项目为个人的博客网站。将用于记录自己的学习进程。同时发布有关知识的文章（不局限编程相关!）争取日更！！
@@ -23,6 +48,7 @@
  #java基础相关
 #web相关
 #框架相关
+AJAX 今日更新
 #数据库/缓存相关
 #游戏相关
 #文学相关</description>
