@@ -6,10 +6,25 @@
     <description>Recent content on youshen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 May 2020 13:02:18 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 16:04:15 +0800</lastBuildDate>
     
 	<atom:link href="https://youshen00.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring_1</title>
+      <link>https://youshen00.github.io/post/spring_1/</link>
+      <pubDate>Mon, 25 May 2020 16:04:15 +0800</pubDate>
+      
+      <guid>https://youshen00.github.io/post/spring_1/</guid>
+      <description>Spring_day1 1. Spring框架的引言 spring(春天),生于在2002年,由Rod Johnson创作。Spring框架是一个集众多设计模式于一身的开源的、轻量级的项目管理框架。致力于JAVAEE轻量级解决方案。相对于原来学过的框架而言,spring框架和之前学习的struts2 、 mybatis 框架有了本质的区别,不是替换原来的某个框架,而是对其进行整合管理。
+轻量级解决方案:提供一个以简单的、统一的、高效的方式构造整个应用，并且可以将单层框架以最佳的组合揉和在一起建立一个连贯的体系。
+ 2.Spring框架的核心作用 Spring 框架用来管理**[创建|使用|销毁]**项目中的组件,由于spring 框架可以帮我们生产项目中组件对象,因此也习惯称spring是一个**工厂|容器**。
+ 组件: 项目中的service,dao,action,都是项目中的组件
+注意: spring框架通常不管理对实体类对象创建
+  3.第一个环境搭建  a. 引入依赖
+ &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-beans&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-expression&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aspects&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  b.</description>
+    </item>
     
     <item>
       <title>目录</title>
@@ -52,21 +67,6 @@ AJAX 今日更新
 #数据库/缓存相关
 #游戏相关
 #文学相关</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://youshen00.github.io/post/spring_day1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://youshen00.github.io/post/spring_day1/</guid>
-      <description>Spring_day1 1. Spring框架的引言 spring(春天),生于在2002年,由Rod Johnson创作。Spring框架是一个集众多设计模式于一身的开源的、轻量级的项目管理框架。致力于JAVAEE轻量级解决方案。相对于原来学过的框架而言,spring框架和之前学习的struts2 、 mybatis 框架有了本质的区别,不是替换原来的某个框架,而是对其进行整合管理。
-轻量级解决方案:提供一个以简单的、统一的、高效的方式构造整个应用，并且可以将单层框架以最佳的组合揉和在一起建立一个连贯的体系。
- 2.Spring框架的核心作用 Spring 框架用来管理**[创建|使用|销毁]**项目中的组件,由于spring 框架可以帮我们生产项目中组件对象,因此也习惯称spring是一个**工厂|容器**。
- 组件: 项目中的service,dao,action,都是项目中的组件
-注意: spring框架通常不管理对实体类对象创建
-  3.第一个环境搭建  a. 引入依赖
- &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-beans&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-expression&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aspects&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  b.</description>
     </item>
     
   </channel>
