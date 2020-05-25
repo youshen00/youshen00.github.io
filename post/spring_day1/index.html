@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <title> // youshen</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.71.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="youshen" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://youshen00.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Spring_day1 1. Spring框架的引言 spring(春天),生于在2002年,由Rod Johnson创作。Spring框架是一个集众多设计模式于一身的开源的、轻量级的项目管理框架。致力于JAVAEE轻量级解决方案。相对于原来学过的框架而言,spring框架和之前学习的struts2 、 mybatis 框架有了本质的区别,不是替换原来的某个框架,而是对其进行整合管理。
+轻量级解决方案:提供一个以简单的、统一的、高效的方式构造整个应用，并且可以将单层框架以最佳的组合揉和在一起建立一个连贯的体系。
+ 2.Spring框架的核心作用 Spring 框架用来管理**[创建|使用|销毁]**项目中的组件,由于spring 框架可以帮我们生产项目中组件对象,因此也习惯称spring是一个**工厂|容器**。
+ 组件: 项目中的service,dao,action,都是项目中的组件
+注意: spring框架通常不管理对实体类对象创建
+  3.第一个环境搭建  a. 引入依赖
+ &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-core&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-beans&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-expression&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-aop&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-context&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt;  b."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Spring_day1 1. Spring框架的引言 spring(春天),生于在2002年,由Rod Johnson创作。Spring框架是一个集众多设计模式于一身的开源的、轻量级的项目管理框架。致力于JAVAEE轻量级解决方案。相对于原来学过的框架而言,spring框架和之前学习的struts2 、 mybatis 框架有了本质的区别,不是替换原来的某个框架,而是对其进行整合管理。
+轻量级解决方案:提供一个以简单的、统一的、高效的方式构造整个应用，并且可以将单层框架以最佳的组合揉和在一起建立一个连贯的体系。
+ 2.Spring框架的核心作用 Spring 框架用来管理**[创建|使用|销毁]**项目中的组件,由于spring 框架可以帮我们生产项目中组件对象,因此也习惯称spring是一个**工厂|容器**。
+ 组件: 项目中的service,dao,action,都是项目中的组件
+注意: spring框架通常不管理对实体类对象创建
+  3.第一个环境搭建  a. 引入依赖
+ &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-core&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-beans&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-expression&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-aop&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-context&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt; &lt;version&gt;4.3.2.RELEASE&lt;/version&gt; &lt;/dependency&gt;  b." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://youshen00.github.io/post/spring_day1/" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://youshen00.github.io/"><img class="app-header-avatar" src="/kabuto.jpg" alt="youshen" /></a>
+      <h1>youshen</h1>
+      <p>争取日更的个人博客！！ </p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/youshen00" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h1 id="spring_day1">Spring_day1</h1>
+<h2 id="1-spring框架的引言">1. Spring框架的引言</h2>
+<p><code>spring</code>(春天),生于在2002年,由<code>Rod Johnson</code>创作。Spring框架是一个集众多设计模式于一身的<code>开源的</code>、<code>轻量级</code>的<code>项目管理</code>框架。致力于JAVAEE轻量级解决方案。相对于原来学过的框架而言,spring框架和之前学习的struts2 、 mybatis 框架有了本质的区别,不是替换原来的某个框架,而是对其进行<code>整合管理</code>。</p>
+<p><code>轻量级解决方案</code>:提供一个以简单的、统一的、高效的方式构造整个应用，并且可以将单层框架以最佳的组合揉和在一起建立一个连贯的体系。</p>
+<hr>
+<h2 id="2spring框架的核心作用">2.Spring框架的核心作用</h2>
+<p>Spring 框架用来<code>管理</code>**[创建|使用|销毁]**项目中的组件,由于spring 框架可以帮我们生产项目中组件对象,因此也习惯称spring是一个**工厂|容器**。</p>
+<blockquote>
+<p><strong><code>组件</code>:</strong> 项目中的service,dao,action,都是项目中的组件</p>
+<p><strong><code>注意</code>:</strong> spring框架通常<strong>不管理对实体类对象创建</strong></p>
+</blockquote>
+<hr>
+<h2 id="3第一个环境搭建">3.第一个环境搭建</h2>
+<blockquote>
+<p><code>a. 引入依赖</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-beans<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-expression<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-aop<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-context<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-context-support<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-aspects<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>spring-jdbc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>4.3.2.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+  <span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><blockquote>
+<p><code>b. 引入配置文件</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"># 配置文件名称: 任意名称 
+# 配置文件位置: 项目中根下任意位置
+# 配置文件的内容:
+		<span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+    &lt;<span style="color:#f92672">beans</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+           <span style="color:#a6e22e">xmlns:xsi</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+           <span style="color:#a6e22e">xsi:schemaLocation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans 
+</span><span style="color:#e6db74">           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd &#34;</span>&gt;
+    &lt;/<span style="color:#f92672">beans</span>&gt;
+</code></pre></div><blockquote>
+<p><code>c.创建组件</code></p>
+</blockquote>
+<p><img src="Spring_day1.assets/image-20190704200717792.png" alt="image-20190704200717792"></p>
+<p><img src="Spring_day1.assets/image-20190704201346305.png" alt="image-20190704201346305"></p>
+<blockquote>
+<p><code>d.工厂管理</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+  	<span style="color:#75715e">&lt;!--通过bean标签管理组件对象--&gt;</span>
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;userDAO&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.baizhi.dao.UserDAOImpl&#34;</span><span style="color:#f92672">&gt;&lt;/bean&gt;</span>
+
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><p><img src="Spring_day1.assets/image-20190704201957168.png" alt="image-20190704201957168"></p>
+<blockquote>
+<p><code>e.启动工厂</code>测试</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			 <span style="color:#75715e">//启动工厂
+</span><span style="color:#75715e"></span>        ApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassPathXmlApplicationContext<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;spring.xml&#34;</span><span style="color:#f92672">);</span>
+				<span style="color:#75715e">//获取对象
+</span><span style="color:#75715e"></span>        UserDAO userDAO <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>UserDAO<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userDAO&#34;</span><span style="color:#f92672">);</span>
+
+        userDAO<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;小黑&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<h2 id="4spring框架中的核心思想">4.Spring框架中的核心思想</h2>
+<h4 id="41-ioc控制反转">4.1 IOC[控制反转]</h4>
+<ul>
+<li>
+<p><code>IOC**(inversion of controll)控制反转</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"># 1.定义
+  将对象的创建由原来(new)的方式转移到配置文件中,交给spring工厂来创建对象
+</code></pre></div></li>
+<li>
+<p><code>DI(dependcy Injection)依赖注入 </code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"># 1.定义
+  Spring不仅要创建对象,还要建立类与类之间的关系,因此在控制反转的基础上又提出了依赖注入的概念。
+</code></pre></div></li>
+</ul>
+<h4 id="42-aop面向切面编程">4.2 AOP[面向切面编程]</h4>
+<p><strong>AOP</strong>( Aspect Oriental Programing ) <strong>面向切面的编程</strong></p>
+<hr>
+<h2 id="5-set方式注入">5. SET方式注入</h2>
+<h3 id="51-八种基本类型string类型-日期类型的注入">5.1 八种基本类型+String类型 +日期类型的注入</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;zhagnsan&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;21&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;100063&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;bir&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;2012/12/12&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;price&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;23.23&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><p><img src="Spring_day1.assets/image-20190704205040539.png" alt="image-20190704205040539"></p>
+<blockquote>
+<p><code>数组类型注入</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--注入数组类型数据--&gt;</span>
+  <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;qqs&#34;</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;array&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>xxx<span style="color:#f92672">&lt;/value&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>qqq<span style="color:#f92672">&lt;/value&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>vvvv<span style="color:#f92672">&lt;/value&gt;</span>
+      <span style="color:#f92672">&lt;/array&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+</code></pre></div><p><img src="Spring_day1.assets/image-20190704205423667.png" alt="image-20190704205423667"></p>
+<blockquote>
+<p><code>注入引用类型和集合类型</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--注入引用类型和对象--&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;userDAO&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;userDAO&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;lists&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;list&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>aaa<span style="color:#f92672">&lt;/value&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>bbb<span style="color:#f92672">&lt;/value&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>ccc<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/list&gt;</span>
+<span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maps&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;map&gt;</span>
+    <span style="color:#f92672">&lt;entry</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;aa&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;xiaohei&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;entry</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;bb&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;xiaoming&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;entry</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;cc&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;xiaosan&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/map&gt;</span>
+<span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;props&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;props&gt;</span>
+    <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:mysql://localhost:3306/test<span style="color:#f92672">&lt;/prop&gt;</span>
+    <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;driver&#34;</span><span style="color:#f92672">&gt;</span>com.mysql.jdbc.Driver<span style="color:#f92672">&lt;/prop&gt;</span>
+    <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">&gt;</span>hr<span style="color:#f92672">&lt;/prop&gt;</span>
+    <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">&gt;</span>hr<span style="color:#f92672">&lt;/prop&gt;</span>
+  <span style="color:#f92672">&lt;/props&gt;</span>
+<span style="color:#f92672">&lt;/property&gt;</span>
+</code></pre></div><p><img src="Spring_day1.assets/image-20190704210245083.png" alt="image-20190704210245083"></p>
+<blockquote>
+<p><code>**注意**: 引用类型使用ref属性注入,基本类型使用value属性注入</code></p>
+</blockquote>
+<hr>
+<h2 id="6构造注入">6.构造注入</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">	<span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
+	<span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;xiaohei&#34;</span><span style="color:#f92672">/&gt;</span>
+	<span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;12&#34;</span><span style="color:#f92672">/&gt;</span>
+	<span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;qqs&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;array&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>xxx<span style="color:#f92672">&lt;/value&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>222<span style="color:#f92672">&lt;/value&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>333<span style="color:#f92672">&lt;/value&gt;</span>
+    <span style="color:#f92672">&lt;/array&gt;</span>
+	<span style="color:#f92672">&lt;/constructor-arg&gt;</span>
+</code></pre></div><blockquote>
+<p><code>注意:构造注入并不常用,不过在一些框架类中必须使用构造注入,这里先了解其注入语法即可。</code></p>
+</blockquote>
+<h2 id="7自动注入">7.自动注入</h2>
+<blockquote>
+<ul>
+<li><strong>autowire=”byName”</strong></li>
+</ul>
+<blockquote>
+<p><code>根据注入的属性名与配置文件中bean的id匹配,一致则注入,不一致报错</code></p>
+</blockquote>
+<ul>
+<li><strong>autowire=”byType”</strong></li>
+</ul>
+<blockquote>
+<p><code>根据注入的属性类型,与配置文件中的类型匹配,类型一致注入(在多个实现类时,会产生歧义)</code></p>
+</blockquote>
+<p><code>注意: 无论使用以上那种方式注入都需要为属性提供set方法</code></p>
+</blockquote>
+<hr>
+<h2 id="8bean的创建模式">8.bean的创建模式</h2>
+<p><strong>singleton:单例 默认</strong></p>
+<p>​	 	 在工厂中<code>全局唯一,只创建一次</code></p>
+<p><strong>prototype: 多例</strong></p>
+<p>​		 <code>全局不唯一,每次使用都会创建一个新的对象</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>bean id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxx.userAction&#34;</span> scope<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;prototype|singleton&#34;</span><span style="color:#f92672">&gt;</span>
+		service<span style="color:#f92672">,</span>dao    <span style="color:#f92672">-----&gt;</span>  singleton
+		struts2 action <span style="color:#f92672">-----&gt;</span> prototype
+</code></pre></div><blockquote>
+<p><code>注意:在项目开发中service,dao组件单例,struts2的Action必须为:多例</code></p>
+</blockquote>
+<hr>
+<h2 id="9bean的生产原理">9.bean的生产原理</h2>
+<blockquote>
+<p><code>原理</code>:   <code>反射+构造方法</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> UserDAOImpl userDAO <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>UserDAOImpl<span style="color:#f92672">)</span> Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.baizhi.dao.UserDAOImpl&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">();</span>
+ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>userDAO<span style="color:#f92672">);</span>
+</code></pre></div><hr>
+<h2 id="10bean的生命周期">10.bean的生命周期</h2>
+<blockquote>
+<ul>
+<li>
+<p><code>何时创建</code></p>
+<p>随着工厂启动, <strong><code>所有单例bean随之创建 非单例的bean,每次使用时创建</code></strong></p>
+</li>
+<li>
+<p><code>何时销毁</code></p>
+<p>工厂<strong><code>关闭,所有bean随之销毁</code></strong> (  注意:  <code>spring对多例bean管理松散,不会负责多例bean的销毁</code>)</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="11bean工厂创建对象的好处">11.bean工厂创建对象的好处</h2>
+<blockquote>
+<ol>
+<li>
+<p><code>使用配置文件管理java类,再生产环境中更换类的实现时不需要重新部署,修改文件即可</code></p>
+</li>
+<li>
+<p><code>spring默认使用单例的模式创建bean,减少内存的占用</code></p>
+</li>
+<li>
+<p><code>通过依赖注入建立了类与类之间的关系(使java之间关系更为清晰,方便了维护与管理)</code></p>
+</li>
+</ol>
+</blockquote>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
